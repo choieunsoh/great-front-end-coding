@@ -69,7 +69,7 @@ yarn add -D prettier
 ## Setup Jest with TypeScript
 
 ```bash
-yarn add -D jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript @types/jest
+yarn add -D jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript @types/jest ts-jest ts-node typescript
 ```
 
 **babel.config.js**
@@ -78,4 +78,18 @@ yarn add -D jest babel-jest @babel/core @babel/preset-env @babel/preset-typescri
 module.exports = {
   presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
 };
+```
+
+**jest.config.ts**
+
+```ts
+import type { Config } from '@jest/types';
+// Sync object
+const config: Config.InitialOptions = {
+  verbose: true,
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+};
+export default config;
 ```
