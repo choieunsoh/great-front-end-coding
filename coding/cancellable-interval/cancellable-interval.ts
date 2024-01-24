@@ -1,4 +1,4 @@
-// Cancellable Interval: Implement a function that acts like setInterview but returns a function to cancel the interval.
+// Cancellable Interval: Implement a function that acts like setInterval but returns a function to cancel the interval.
 // https://www.greatfrontend.com/questions/javascript/cancellable-interval
 
 export default function setCancellableInterval(callback: Function, delay?: number, ...args: Array<any>): () => void {
